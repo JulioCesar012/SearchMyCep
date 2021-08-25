@@ -54,9 +54,22 @@ const Home = () => {
 
                 {visible === true ? (
                     <>
-                        <TextInput autoCorrect={false} style={styles.inputsValues} value={estado} onChangeText={setEstado} />
-                        <TextInput autoCorrect={false} style={styles.inputsValues} value={cidade} onChangeText={setCidade} />
-                        <TextInput autoCorrect={false} style={styles.inputsValues} value={endereco} onChangeText={setEndereco} />
+                        <TextInput autoCorrect={false} style={styles.inputsValues} 
+                            value={estado} 
+                            onChangeText={setEstado} 
+                            placeholder="Digite seu Estado, exemplo: SP"
+                            placeholderTextColor="rgba(187, 187, 187, 1)" />
+                        <TextInput autoCorrect={false} style={styles.inputsValues} 
+                            value={cidade} 
+                            onChangeText={setCidade}
+                            placeholder="Digite sua cidade"
+                            placeholderTextColor="rgba(187, 187, 187, 1)"
+                            />
+                        <TextInput autoCorrect={false} style={styles.inputsValues} 
+                            value={endereco}
+                            onChangeText={setEndereco}
+                            placeholder="Digite seu endereço"
+                            placeholderTextColor="rgba(187, 187, 187, 1)" />
 
                         <TouchableOpacity style={styles.buttonSearch} onPress={handleBuscaCep}><Text style={styles.textButtonSearch} >Procurar <IonicIcons name="map-outline" size={20} style={{ fontWeight: 'bold' }} color="#FFF" /></Text></TouchableOpacity>
                     </>
