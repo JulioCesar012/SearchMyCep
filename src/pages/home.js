@@ -32,9 +32,10 @@ const Home = () => {
                 setCep(response.data.map((dataCep) => {
                     return (
                         <>
-                            <Text>Cep: {dataCep.cep}</Text>
-                            <Text>Logradouro: {dataCep.logradouro}</Text>
-                            <Text>Bairro: {dataCep.bairro} {cep.length > 1 ? '' : ''}</Text>
+                            <Text> Cep: {dataCep.cep}</Text>,
+                            <Text> Logradouro: {dataCep.logradouro}</Text>,
+                            <Text> Bairro: {dataCep.bairro}</Text>,
+                            <Text> Cidade: {dataCep.localidade} {cep.length > 1 ? '' : ''}</Text>
                             {"\n"}{"\n"}
                         </>
                     )
@@ -80,7 +81,7 @@ const Home = () => {
                         <View style={styles.viewCep}>
                             <ScrollView style={styles.scrollCep}>
                                 <Text style={styles.resultCep}>
-                                    {cep}
+                                    {cep.length > 0 ? cep : 'Nada encontrado' }
                                 </Text>
                             </ScrollView>
 
