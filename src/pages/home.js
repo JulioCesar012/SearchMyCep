@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { LinearGradient } from 'expo-linear-gradient';
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Image, KeyboardAvoidingView, TextInput, Platform, StyleSheet, TouchableOpacity, Text, View, ScrollView, Alert } from 'react-native';
 
 import IonicIcons from 'react-native-vector-icons/Ionicons';
@@ -34,8 +33,7 @@ const Home = () => {
                         <>
                             <Text> Cep: {dataCep.cep}</Text>,
                             <Text> Logradouro: {dataCep.logradouro}</Text>,
-                            <Text> Bairro: {dataCep.bairro}</Text>,
-                            <Text> Cidade: {dataCep.localidade} {cep.length > 1 ? '' : ''}</Text>
+                            <Text> Bairro: {dataCep.bairro}</Text>
                             {"\n"}{"\n"}
                         </>
                     )
@@ -45,6 +43,10 @@ const Home = () => {
     }
 
     function limpaResult() {
+        setEstado('');
+        setCidade('');
+        setEndereco('');
+        setCep('');
         setVisible(true);
     }
 
@@ -55,11 +57,16 @@ const Home = () => {
 
                 {visible === true ? (
                     <>
+
                         <TextInput autoCorrect={false} style={styles.inputsValues} 
                             value={estado} 
                             onChangeText={setEstado} 
                             placeholder="Digite seu Estado, exemplo: SP"
-                            placeholderTextColor="rgba(187, 187, 187, 1)" />
+                            placeholderTextColor="rgba(187, 187, 187, 1)"
+                            maxLength={2}
+                            />
+
+
                         <TextInput autoCorrect={false} style={styles.inputsValues} 
                             value={cidade} 
                             onChangeText={setCidade}
