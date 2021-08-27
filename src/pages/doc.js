@@ -1,6 +1,7 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import IonicIcons from 'react-native-vector-icons/Ionicons';
 
 import Logo from '../../assets/location.png';
 
@@ -13,15 +14,15 @@ const Doc = () => {
         <Image style={{ width: '100%', maxHeight: 130, resizeMode: 'contain', marginBottom: 35, marginTop: 30 }} source={Logo} alt="Localidade CEP" />
             <Text style={styles.titleDoc}>Como usar o App?</Text>
             <ScrollView style={styles.scrollAbout}>
-                <Text style={styles.textAbout}>
-                1) Ao acessar, preencha seu estado utilizando sigla, exemplo: <Text style={styles.textParafraseado}>SP</Text>
+                <Text style={styles.textAbout}><IonicIcons name="pin-outline" size={26} color="#FFF" />{' '}
+                Ao acessar, preencha seu estado utilizando sigla, exemplo: <Text style={styles.textParafraseado}>SP</Text>
                 </Text>
-                <Text style={styles.textAbout}>
-                2) Preencha o nome completo da sua cidade, exemplo: <Text style={styles.textParafraseado}>Ubatuba</Text>
+                <Text style={styles.textAbout}><IonicIcons name="navigate-circle-outline" size={26} color="#FFF" />{' '} 
+                Preencha o nome completo da sua cidade, exemplo: <Text style={styles.textParafraseado}>Ubatuba</Text>
                 </Text>
 
-                <Text style={styles.textAbout}>
-                3) Preencha o nome completo da sua rua sem o número da sua casa, exemplo: <Text style={styles.textParafraseado}>Professor Thomaz Galhardo</Text>
+                <Text style={styles.textAbout}><IonicIcons name="location-outline" size={26} color="#FFF" />{' '}
+                Preencha o nome completo da sua rua sem o número da sua casa, exemplo: <Text style={styles.textParafraseado}>Professor Thomaz Galhardo</Text>
                 </Text>
 
                 <Text style={styles.textAbout}>

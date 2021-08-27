@@ -1,6 +1,7 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import IonicIcons from 'react-native-vector-icons/Ionicons';
 
 import Logo from '../../assets/location.png';
 
@@ -12,11 +13,13 @@ const About = () => {
        <View style={styles.container}>
         <Image style={{ width: '100%', maxHeight: 130, resizeMode: 'contain', marginBottom: 35, marginTop: 30 }} source={Logo} alt="Localidade CEP" />
             <ScrollView style={styles.scrollAbout}>
-                <Text style={styles.textAbout}>
+                <Text style={styles.textAbout}><IonicIcons name="phone-portrait-outline" size={26} color="#FFF" /> {' '}
                 Esse app foi desenvolvido com o objetivo de ajudar pessoas a encontrar os ceps de seu endereço. 
                 Devido a mudanças de cep em algumas cidades isso não foi anúnciado de forma global, 
                 por isso se você ainda não sabe qual seu cep, digite no nosso app e ele te mostrará. Atenção para não errar seu endereço!
                 </Text>
+
+                <Text style={styles.textAbout}><IonicIcons name="wifi-outline" size={27} color="#FFF" />{' '} Esse app necessita de conexão com a internet para fazer a busca de ceps.</Text>
             </ScrollView>
         </View>
        </>

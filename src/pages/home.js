@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { LinearGradient } from 'expo-linear-gradient';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Image, KeyboardAvoidingView, TextInput, Platform, StyleSheet, TouchableOpacity, Text, View, ScrollView, Alert } from 'react-native';
 
 import IonicIcons from 'react-native-vector-icons/Ionicons';
@@ -15,6 +15,10 @@ const Home = () => {
     const [endereco, setEndereco] = useState('');
 
     const [cep, setCep] = useState('');
+
+    useEffect(() => {
+        Alert.alert('Atenção! Esse aplicativo necessita estar conectado a internet.', 'Se não estiver, a busca pelo cep não funcionará!')
+    }, []);
 
     async function handleBuscaCep() {
         if (estado === '' || cidade === '' || endereco === '') {
